@@ -427,7 +427,7 @@
             const formatiertArbeitszeit = formatHoursMinutes(arbeitszeitTotalMinutes);
             
             let ergebnisHTML = `
-                <p>Arbeitszeit: ${arbeitszeitInStunden.toFixed(2)} Stunden (${formatiertArbeitszeit})</p>
+                <p>Arbeitszeit: ${arbeitszeitInStunden.toFixed(2)}<br>Stunden (${formatiertArbeitszeit})</p>
             `;
             resultDiv.classList.remove('negative', 'positive', 'neutral');
             if (vergleichsArbeitszeit < vergleichsErforderlicheArbeitszeit) {
@@ -436,7 +436,7 @@
                 const formatiertFehlendeZeit = formatHoursMinutes(fehlendeZeitMinuten);
                 
                 ergebnisHTML += `
-                    <p class="negative">Fehlende Zeit: ${fehlendeZeitInStunden.toFixed(2)} Stunden (${formatiertFehlendeZeit})</p>
+                    <p class="negative">Fehlende Zeit: ${fehlendeZeitInStunden.toFixed(2)}<br>Stunden (${formatiertFehlendeZeit})</p>
                 `;
                 resultDiv.classList.add('negative');
             } else if (vergleichsArbeitszeit > vergleichsErforderlicheArbeitszeit) {
@@ -444,7 +444,7 @@
                 const extraZeitMinuten = Math.round(extraZeitInStunden * 60);
                 const formatiertExtraZeit = formatHoursMinutes(extraZeitMinuten);
                 ergebnisHTML += `
-                    <p class="positive">Überstunden: ${extraZeitInStunden.toFixed(2)} Stunden (${formatiertExtraZeit})</p>
+                    <p class="positive">Überstunden: ${extraZeitInStunden.toFixed(2)}<br>Stunden (${formatiertExtraZeit})</p>
                 `;
                 resultDiv.classList.add('positive');
             } else {
@@ -528,6 +528,7 @@
 </body>
 
 </html>
+
 
 
 
