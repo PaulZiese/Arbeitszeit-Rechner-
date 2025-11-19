@@ -256,9 +256,6 @@
             font-size: 14px;
             z-index: 10; /* Sicherstellen, dass es über anderen Elementen liegt */
             text-align: right;
-            background-color: rgba(0,0,0,0.5); /* Leichter, halbtransparenter Hintergrund für bessere Lesbarkeit */
-            padding: 5px 10px;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -510,7 +507,7 @@
 
         const displayElement = document.getElementById('live-datetime-display');
         if (displayElement) {
-            displayElement.innerHTML = `Datum: ${formattedDate}<br>KW: ${weekNumber}`;
+            displayElement.innerHTML = `Datum: ${formattedDate} KW: ${weekNumber}`;
         }
     }
 
@@ -525,6 +522,7 @@
 </body>
 
 </html>
+
 
 
 
