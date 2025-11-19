@@ -365,8 +365,9 @@
         const startMinute = parseInt(startTime.split(":")[1]);
         const startMinutesTotal = startHour * 60 + startMinute;
         let arbeitsschlussMinutesTotal = startMinutesTotal + arbeitzeit + pause;
-        let endHour = Math.floor(arbeitsschlussMinutesTotal / 60);
-        const endMinute = Math.round(arbeitsschlussMinutesTotal % 60);
+        const roundedArbeitsschlussMinutesTotal = Math.round(arbeitsschlussMinutesTotal);
+        let endHour = Math.floor(roundedArbeitsschlussMinutesTotal / 60);
+        const endMinute = roundedArbeitsschlussMinutesTotal % 60;
         let nextDayText = "";
         if (endHour >= 24) {
             endHour = endHour % 24;
@@ -477,6 +478,7 @@
 </body>
 
 </html>
+
 
 
 
